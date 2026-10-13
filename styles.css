@@ -1,0 +1,413 @@
+@charset "UTF-8";
+
+/*
+Full Name: Alonzo Miguel R. Garcia
+Block: WD - 202
+Business: NiCeity Realty
+*/
+
+/* CSS Reset */
+
+body, header, nav, main, footer, h1, div, img, p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* CSS Styles for Body and Images */
+
+body {
+    background-color: white;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* CSS Styles for Header */
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    align-self: center;
+}
+
+header img {
+    margin: 0 auto;
+}
+
+/* CSS Styles for Navigation Area */
+
+nav {
+    padding: 1%;
+    margin-bottom: 1%;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+
+nav li {
+    display: block;
+    font-size: 1.3em;
+    font-family: 'Times New Roman', Arial, sans-serif;
+    font-weight: bold;
+    border-top: 1px solid #D38A8E;
+    border-radius: 1em;
+    
+}
+
+nav li a {
+    display: block;
+    color: #D38A8E;
+    text-align: center;
+    padding: 0.5em 2.5em;
+    text-decoration: none;
+    margin: 0.1em;
+}
+
+nav li:first-child {
+    border-top: none;
+}
+
+nav a:hover {
+    color: white;
+    background: linear-gradient(to right, #f37b9b, #ffb5c9);
+    border-radius: 1em;
+    transition: color 0.7s ease-in-out;
+}
+
+nav a:active {
+    color: #ffffff;
+    background-color: #f09fa3;
+}
+
+/* Show Mobile Class, Hide Tablet-Desktop Class */
+
+.mobile {
+    display: block;
+}
+
+.tablet-desktop {
+    display: none;
+}
+
+/* CSS Styles for the Main Section */
+
+main {
+    clear: both;
+    background-color: white;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 2% 2.5%;
+    font-size: 1.25em;
+    color: #333333;
+}
+
+h3 {
+    font-family: "Patua One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #333333;
+}
+
+hr {
+    margin-top: 1.7em;
+    margin-bottom: 1.7em;
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact a {
+    color: #8d1e49;
+    text-decoration: none;
+}
+
+
+
+#madonnares {
+    clear: both;
+    width: 100%;
+    height: 20em;
+    object-fit: cover;
+    display: block;
+}
+
+#logo {
+    max-width: 270px;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    clear: bottom;
+}
+
+#about p {
+    padding-bottom: 1em;
+}
+
+
+.map {
+    border: 8px solid #ffc1d4;
+    border-radius: 1em;
+    margin-bottom: 2em;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 95%;
+    height: 50%;
+}
+
+.banner-wrapper {
+    clear: both;
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+    
+}
+
+.banner-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+.tel-link {
+    background: linear-gradient(to right, white, #ffb5c9);
+    border-bottom: 1px solid #ffb5c9;
+    padding: 2%;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 2em;
+    margin-top: 1em ;
+    margin-bottom: 1em ;
+    box-shadow: inset 0 0 8px rgba(255, 147, 199, 0.2), 0 4px 10px rgba(255, 179, 225, 0.15);
+}
+
+.tel-link a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+    font-family: "Paytone One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.hours {
+    margin-left: 2%;
+}
+
+/* CSS Styles for the Footer */
+
+footer {
+    width: 100%;
+    background: linear-gradient(to right, #f37b9b, #ffb5c9);
+    padding: 1.5em;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+footer p {
+    font-size: 0.85em;
+    text-align: center;
+    color: white;
+    padding: 0.1em;
+    
+}
+
+footer p a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* ============================================== */
+/* MEDIA QUERY FOR TABLET VIEWPORT */
+/* Tablet Viewport: Show Tablet-Desktop Class, Hide Mobile Class */
+
+@media screen and (min-width: 630px), print {
+    .tablet-desktop {
+        display: block;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+/* Tablet Viewport: Style Rule for Header */
+
+    header {
+        position: static;
+        padding-bottom: 2em;
+    }
+
+/* Tablet Viewport: Style Rules for Nav Area */
+
+    nav li {
+        border-top: none;
+        display: inline-block;
+        font-size: 1.3em;
+        font-family: 'Times New Roman', Arial, sans-serif;
+        font-weight: bold;
+        border-right: 2.067px solid #D38A8E;
+        border-radius: 0;
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
+    nav li a {
+        padding: 0.4em 0.6em;
+    }
+
+/* Tablet Viewport: Style Rules For Main Content Area */
+
+    #about {
+        clear: left;
+        background: linear-gradient(to right, white, #ffb5c9);
+        background-color: white;
+        padding: 1em 1.5em 2.5em 1.5em ;
+        border-radius: 5em;
+        border-bottom: 1px solid #ffb5c9;
+    }
+
+    .tel-num {
+        font-size: 1em;
+    }
+
+    .map {
+        width: 700px;
+        height: 600px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ========================================= */
+/* MEDIA QUERY FOR DESKTOP VIEWPORT */
+
+
+@media screen and (min-width: 1015px), print {
+
+/* Desktop Viewport: Style Rule For Header */
+
+    header {
+        width: 20%;
+        float: left;
+        padding-bottom: 0;
+    }
+
+    header img {
+        margin: 0;
+    }
+
+/* Desktop Viewport: Style Rules For Nav Area */
+
+    nav {
+        float: right;
+        width: 70%;
+        margin: 6em 1em 0em 0em;
+        padding-bottom: 0;
+    }
+
+
+    nav ul {
+        text-align: right;
+    }
+
+    nav li {
+        border: none;
+    }
+
+    nav li a {
+        padding: 0.5em 0.6em;
+    }
+
+   nav a:hover {
+        color: white;
+        background-color: #f09fa3;
+        border-radius: 2em;
+    }
+
+    nav a:active {
+        color: #ffffff;
+        background-color: #f09fa3;
+    }
+
+/* Desktop Viewport: Style Rules For Main Content */
+
+    main {
+        clear: left;
+    }
+
+    main h1 {
+        font-size: 1.8em;
+    }
+
+    #about {
+        clear: left;
+        background: linear-gradient(to right, white, #ffb5c9);
+        background-color: white;
+        padding: 3em 5em ;
+        border-radius: 20em;
+        clear: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* =======================================    */
+/* Media Query For Large Desktop Viewport */
+
+@media screen and (min-width: 1921px) {
+    #container {
+        width: 1920px;
+        margin: 0 auto;
+    }
+}
+
+/* =================================*/
+/* Media Query Print */
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+}
+
+
+
+
+
+
