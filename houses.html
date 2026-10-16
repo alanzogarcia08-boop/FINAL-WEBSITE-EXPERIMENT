@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+	Full Name: Alonzo Miguel R. Garcia
+	Block: WD - 202
+	Business: NiCeity Realty
+	-->
+	<title>NiCeity Realty: Houses & Listings</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Paytone+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+		<header>
+			<a href="index.html">
+				<img src="img/NiceityLogo.png" alt="NiCeity Logo" id="logo"/>
+			</a>
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="houses.html" class="active-nav">Houses</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<div class="banner-wrapper">
+			<img src="img/madonnaban.jpg" alt="Madonna Residences"/>
+			<div class="banner-overlay">
+				<h1>A Step Closer to Home</h1>
+				<p>Start your journey to home with us!</p>
+				<form class="search-form" id="bannerSearchForm" onsubmit="handleSearch(event)">
+					<input type="text" id="searchInput" placeholder="Search unit, bedrooms, location..." />
+					<button type="submit" aria-label="Search">&#128269;</button>
+				</form>
+			</div>
+		</div>
+
+		<main>
+			<div class="units-section">
+				<h3 class="section-title">AVAILABLE UNITS</h3>
+				
+				<!-- Search results status notice -->
+				<div id="searchNotice" style="margin-bottom: 1em; font-weight: bold; color: #8d1e49; display: none;"></div>
+
+				<div class="cards-grid units-grid" id="unitsContainer">
+					
+					<!-- Unit 1 -->
+					<div class="card searchable-card" data-keywords="unit 1 angeles city 3 bedrooms 2 toilet modern pool">
+						<img src="img/house1.jpg" alt="Unit 1"/>
+						<div class="card-content">
+							<h4>UNIT 1</h4>
+							<p><strong>Location:</strong> Angeles City, Pampanga</p>
+							<p><strong>Details:</strong> 3 Bedrooms, 2 Toilets, 1 Maid room, Open-plan living, Dining area, Modern kitchen, Carport, Private Swimming Pool.</p>
+							<p><strong>Price:</strong> Bank Financing / Cash</p>
+							<div class="cta-button-wrapper" style="margin: 1em 0 0 0;">
+								<a href="contact.html" class="btn-pink" style="padding: 0.5em 1em; font-size: 0.9em;">Book Unit 1</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Unit 2 -->
+					<div class="card searchable-card" data-keywords="unit 2 angeles city 4 bedrooms 3 toilets parking dirty kitchen">
+						<img src="img/house2.jpg" alt="Unit 2"/>
+						<div class="card-content">
+							<h4>UNIT 2</h4>
+							<p><strong>Location:</strong> Angeles City, Pampanga</p>
+							<p><strong>Details:</strong> 4 Bedrooms, 3 Toilets & Baths, Living, Dining, Clean Kitchen, 1 Parking, Dirty Kitchen.</p>
+							<p><strong>Price:</strong> Bank Financing / Cash</p>
+							<div class="cta-button-wrapper" style="margin: 1em 0 0 0;">
+								<a href="contact.html" class="btn-pink" style="padding: 0.5em 1em; font-size: 0.9em;">Book Unit 2</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Unit 3 -->
+					<div class="card searchable-card" data-keywords="unit 3 san fernando 4 bedrooms masters walk in closet balcony garage">
+						<img src="img/house3.jpg" alt="Unit 3"/>
+						<div class="card-content">
+							<h4>UNIT 3</h4>
+							<p><strong>Location:</strong> San Fernando, Pampanga</p>
+							<p><strong>Details:</strong> 4 Bedrooms, Master's with walk-in closet, Double height ceiling, 2 Car garage, Lanscape garden.</p>
+							<p><strong>Price:</strong> Bank Financing / Cash</p>
+							<div class="cta-button-wrapper" style="margin: 1em 0 0 0;">
+								<a href="contact.html" class="btn-pink" style="padding: 0.5em 1em; font-size: 0.9em;">Book Unit 3</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Unit 4 -->
+					<div class="card searchable-card" data-keywords="unit 4 angeles city 4 bedrooms air conditioning maids room smart tv">
+						<img src="img/house4.jpg" alt="Unit 4"/>
+						<div class="card-content">
+							<h4>UNIT 4</h4>
+							<p><strong>Location:</strong> Angeles City, Pampanga</p>
+							<p><strong>Details:</strong> 4 Bedrooms (with AC), Maids room, High ceiling living area with Samsung 65" Smart TV, Bespoke lighting accents.</p>
+							<p><strong>Price:</strong> Bank Financing / Cash</p>
+							<div class="cta-button-wrapper" style="margin: 1em 0 0 0;">
+								<a href="contact.html" class="btn-pink" style="padding: 0.5em 1em; font-size: 0.9em;">Book Unit 4</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</main>
+		
+		<footer>
+			<p>&copy; Copyright 2026 &#8226 All Rights Reserved &#8226 Developed by Alonzo Garcia</p>
+			<p><strong>NiCeity Realty</strong></p>
+			<p><a href="mailto:niceityrealty@gmail.com" target="_blank">&#128231; niceityrealty@gmail.com</a></p>
+		</footer>
+	</div>
+
+	<script>
+		// Hamburger menu toggle
+		const hamburgerBtn = document.getElementById('hamburgerBtn');
+		const navMenu = document.getElementById('navMenu');
+		hamburgerBtn.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+		});
+
+		// Practical Simple JavaScript Search Bar Filter
+		function handleSearch(event) {
+			event.preventDefault();
+			const query = document.getElementById('searchInput').value.toLowerCase().trim();
+			const cards = document.querySelectorAll('.searchable-card');
+			const notice = document.getElementById('searchNotice');
+			
+			let matchCount = 0;
+
+			cards.forEach(card => {
+				const keywords = card.getAttribute('data-keywords');
+				if (keywords.includes(query) || query === '') {
+					card.style.display = 'block';
+					matchCount++;
+				} else {
+					card.style.display = 'none';
+				}
+			});
+
+			if (query !== '') {
+				notice.style.display = 'block';
+				notice.textContent = `Showing results for "${query}" (${matchCount} found)`;
+			} else {
+				notice.style.display = 'none';
+			}
+		}
+
+		// Also check URL parameters if navigated from home search bar
+		window.addEventListener('DOMContentLoaded', () => {
+			const urlParams = new URLSearchParams(window.location.search);
+			const searchQuery = urlParams.get('search');
+			if (searchQuery) {
+				document.getElementById('searchInput').value = searchQuery;
+				// trigger search filter
+				const event = new Event('submit');
+				document.getElementById('bannerSearchForm').dispatchEvent(event);
+			}
+		});
+	</script>
+</body>
+</html>

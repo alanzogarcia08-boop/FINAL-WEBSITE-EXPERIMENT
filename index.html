@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
 	<!--
 	Full Name: Alonzo Miguel R. Garcia
@@ -7,84 +7,106 @@
 	Business: NiCeity Realty
 	-->
 	<title>NiCeity Realty: Home</title>
-	<meta charset = "utf-8">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Paytone+One&display=swap" rel="stylesheet">
-	<link rel = "stylesheet" href = "styles.css" type = "text/css" />
+	<link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
 <body>
-	<div id = "container">
+	<div id="container">
 		<header>
-			<div>
-			<a href = "index.html">
-				<img src = "img/NiceityLogo.png" alt = "NiCeity Logo" id = "logo" />
+			<a href="index.html">
+				<img src="img/NiceityLogo.png" alt="NiCeity Logo" id="logo" />
 			</a>
-			</div>
+			<!-- Hamburger Button -->
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="index.html" class="active-nav">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="houses.html">Houses</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+			</nav>
 		</header>
 
-		<nav>
-			<ul>
-				<li><a href = "index.html">Home</a></li>
-				<li><a href = "about.html">About Us</a></li>
-				<li><a href = "houses.html">Houses</a></li>
-				<li><a href = "apartments.html">Apartments</a></li>
-				<li><a href = "contact.html">Contact Us</a></li>
-			</ul>
-		</nav>
-
-		<div class = "banner-wrapper" id = "madonnares">
-			<img src = "img/madonnaban.jpg" alt = "Madonna Residences"/>
-		</div> <!-- end of banner-->
+		<div class="banner-wrapper">
+			<img src="img/madonnaban.jpg" alt="Madonna Residences"/>
+			<div class="banner-overlay">
+				<h1>A Step Closer to Home</h1>
+				<p>Start your journey to home with us!</p>
+				<form class="search-form" action="houses.html" method="GET">
+					<input type="text" name="search" id="searchInput" placeholder="Search houses, bedrooms, location..." />
+					<button type="submit" aria-label="Search">&#128269;</button>
+				</form>
+			</div>
+		</div>
 
 		<main>
-			<div class = "mobile">
-
-				<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@niceityrealty" data-unique-id="niceityrealty" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@niceityrealty?refer=creator_embed">@niceityrealty</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-
+			<div id="about-box">
 				<h3>Welcome Home!</h3>
-
 				<p>Finding the right house can be challenging, but we are here to provide the guidance and local market options you need to make it <strong>simple</strong>. As your trusted real estate partner, we give you direct access to top housing projects, flexible budget options, and step-by-step assistance throughout your journey.</p>
-
-				<hr>
-
-				<p>Your new home is just one call away &#128222;</p>
-
-				<p class = "tel-link"><a href="tel:09617454037"  target="_blank">(+63) 961 745 4037</a></p>
-
-				<h4>Operating Hours &#128340;</h4>
-					<ul class="hours">
-						<li>Monday – Friday: 8:30 AM – 5:30 PM</li>
-						<li>Saturday & Sunday: Available for scheduled property trippings.</li>
-					</ul>
+				<br>
+				<h3>Our Vision & Mission</h3>
+				<p><strong>Vision:</strong> To build dreams, one home at a time.</p>
+				<p><strong>Mission:</strong> To help every Filipino find and own their dream home by offering expert guidance, flexible solutions, and heart-centered support every step of the way.</p>
 			</div>
 
+			<div class="featured-section">
+				<h3 class="section-title">FEATURED HOMES</h3>
+				<div class="cards-grid">
+					<div class="card">
+						<img src="img/house1.jpg" alt="Modern House" />
+						<div class="card-content">
+							<h4>Modern House</h4>
+							<p>Angeles City, Pampanga</p>
+							<p><strong>Price:</strong> Bank Financing / Cash Available</p>
+						</div>
+					</div>
+					<div class="card">
+						<img src="img/house2.jpg" alt="4 Bedrooms" />
+						<div class="card-content">
+							<h4>4 Bedrooms Unit</h4>
+							<p>Angeles City, Pampanga</p>
+							<p><strong>Price:</strong> Flexible Payment Terms</p>
+						</div>
+					</div>
+					<div class="card">
+						<img src="img/house3.jpg" alt="Near Clark" />
+						<div class="card-content">
+							<h4>Near Clark Freeport</h4>
+							<p>San Fernando, Pampanga</p>
+							<p><strong>Price:</strong> RFO & Pre-selling Options</p>
+						</div>
+					</div>
+				</div>
 
-			<div class = "tablet-desktop">
-
-				<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@niceityrealty" data-unique-id="niceityrealty" data-embed-type="creator" style="max-width: 780px; min-width: 288px;" > <section> <a target="_blank" href="https://www.tiktok.com/@niceityrealty?refer=creator_embed">@niceityrealty</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-
-				<h3>NiCeity Realty</h3>
-
-                <p>Finding the right house can be challenging, but we are here to provide the guidance and local market options you need to make it <strong>simple</strong>. As your trusted real estate partner, we give you direct access to top housing projects, flexible budget options, and step-by-step assistance throughout your journey. Check out our listings today and take the first step toward securing your new home!</p>
-
-                <h3>Our Vision</h3>
-                <p>To build <strong>dreams</strong>, one home at a time.</p>
-
-                <h3>Our Mission</h3>
-                <p>To help every Filipino find and own their dream home by offering expert guidance, flexible solutions, and heart-centered support every step of the way</p>
+				<div class="cta-button-wrapper">
+					<a href="contact.html" class="btn-pink">Book a House Viewing Here!</a>
+				</div>
 			</div>
-
-
 		</main>
 		
 		<footer>
 			<p>&copy; Copyright 2026 &#8226 All Rights Reserved &#8226 Developed by Alonzo Garcia</p>
 			<p><strong>NiCeity Realty</strong></p>
-			<p><a href = "mailto:niceityrealty@gmail.com"  target="_blank"> &#128231; niceityrealty@gmail.com</a></p>
-			
+			<p><a href="mailto:niceityrealty@gmail.com" target="_blank">&#128231; niceityrealty@gmail.com</a></p>
 		</footer>
 	</div>
-</body>
 
+	<!-- Simple Hamburger Menu & Search Script -->
+	<script>
+		const hamburgerBtn = document.getElementById('hamburgerBtn');
+		const navMenu = document.getElementById('navMenu');
+
+		hamburgerBtn.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+		});
+	</script>
+</body>
 </html>

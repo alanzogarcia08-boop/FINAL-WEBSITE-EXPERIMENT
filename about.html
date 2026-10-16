@@ -1,61 +1,85 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
 	<!--
 	Full Name: Alonzo Miguel R. Garcia
 	Block: WD - 202
 	Business: NiCeity Realty
 	-->
-	<title>NiCeity Realty: About Us </title>
-	<meta charset = "utf-8">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<title>NiCeity Realty: About Us</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Paytone+One&display=swap" rel="stylesheet">
-	<link rel = "stylesheet" href = "styles.css" type = "text/css" />
+	<link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
 <body>
-	<div id = "container">
+	<div id="container">
 		<header>
-			<a href = "index.html">
-				<img src = "img/NiceityLogo.png" alt = "NiCeity Logo" id = "logo"/>
+			<a href="index.html">
+				<img src="img/NiceityLogo.png" alt="NiCeity Logo" id="logo"/>
 			</a>
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html" class="active-nav">About Us</a></li>
+					<li><a href="houses.html">Houses</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+				</ul>
+			</nav>
 		</header>
 
-		<nav>
-			<ul>
-				<li><a href = "index.html">Home</a></li>
-				<li><a href = "about.html">About Us</a></li>
-				<li><a href = "houses.html">Houses</a></li>
-				<li><a href = "apartments.html">Apartments</a></li>
-				<li><a href = "contact.html">Contact Us</a></li>
-			</ul>
-		</nav>
-
-		<div class = "banner-wrapper" id = "madonnares">
-			<img src = "img/madonnaban.jpg" alt = "Madonna Residences"/>
+		<div class="banner-wrapper">
+			<img src="img/madonnaban.jpg" alt="Madonna Residences"/>
+			<div class="banner-overlay">
+				<h1>A Step Closer to Home</h1>
+				<p>Start your journey to home with us!</p>
+				<form class="search-form" action="houses.html" method="GET">
+					<input type="text" name="search" placeholder="Search houses, bedrooms, location..." />
+					<button type="submit" aria-label="Search">&#128269;</button>
+				</form>
+			</div>
 		</div>
 
 		<main>
-			<div id = "about">
-				<h3>About The Real Estate Broker</h3>
-
-				<p>Ma. Cecilia Fermina R. Dela Cruz is a Licensed Real Estate Broker serving Pampanga since 2013 and the founder of NiCeity Realty. She has helped countless families, OFWs, first-time homebuyers, and investors achieve their homeownership and investment goals through honest guidance, professional service and personalized support. </p>
-
-				<p>Specializing in mid-range to luxury homes, she offers a carefully selected portfolio of ready-for-occupancy (RFO) homes and pre-selling residential projects in Pampanga, helping clients find the property that best fits their lifestyle and investment goals. </p>
-
-				<p>Known for her integrity, heart-centered approach, excellent customer service and commitment to her clients, she is dedicated to making every real estate journey smooth, informed, and rewarding. </p>
-
-				<p>Backed by genuine reviews from happy and satisfied clients, Ma. Cecilia continues to earn the trust of those looking for a reliable real estate professional who will guide them every step of the way.</p>
+			<div id="about-box">
+				<h3 class="section-title">ABOUT THE REAL ESTATE BROKER</h3>
+				<div class="about-broker-flex">
+					<img src="img/broker.jpg" alt="Ma. Cecilia Fermina R. Dela Cruz" class="broker-img"/>
+					<div>
+						<p><strong>Ma. Cecilia Fermina R. Dela Cruz</strong> is a Licensed Real Estate Broker serving Pampanga since 2013 and the founder of NiCeity Realty. She has helped countless families, OFWs, first-time homebuyers, and investors achieve their homeownership and investment goals through honest guidance, professional service, and personalized support.</p>
+						<br>
+						<p>Specializing in mid-range to luxury homes, she offers a carefully selected portfolio of ready-for-occupancy (RFO) homes and pre-selling residential projects in Pampanga, helping clients find the property that best fits their lifestyle and investment goals.</p>
+						<br>
+						<p>Known for her integrity, heart-centered approach, and excellent customer service, she is dedicated to making every real estate journey smooth, informed, and rewarding.</p>
+						<p><small>PRC LIC NO. 0015812 | Valid until 10-29-2027 | DHSUD Reg No. RFO3-B-12/22-0608</small></p>
+					</div>
+				</div>
+				
+				<div class="cta-button-wrapper">
+					<a href="contact.html" class="btn-pink">Book a House Viewing Here!</a>
+				</div>
 			</div>
 		</main>
 		
 		<footer>
 			<p>&copy; Copyright 2026 &#8226 All Rights Reserved &#8226 Developed by Alonzo Garcia</p>
 			<p><strong>NiCeity Realty</strong></p>
-			<p><a href = "mailto:niceityrealty@gmail.com"  target="_blank"> &#128231; niceityrealty@gmail.com</a></p>
-			
+			<p><a href="mailto:niceityrealty@gmail.com" target="_blank">&#128231; niceityrealty@gmail.com</a></p>
 		</footer>
 	</div>
-</body>
 
+	<script>
+		const hamburgerBtn = document.getElementById('hamburgerBtn');
+		const navMenu = document.getElementById('navMenu');
+		hamburgerBtn.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+		});
+	</script>
+</body>
 </html>

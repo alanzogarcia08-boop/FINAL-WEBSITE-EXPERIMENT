@@ -7,8 +7,7 @@ Business: NiCeity Realty
 */
 
 /* CSS Reset */
-
-body, header, nav, main, footer, h1, div, img, p {
+body, header, nav, main, footer, h1, h2, h3, h4, div, img, p, ul, li {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,9 +18,11 @@ body, header, nav, main, footer, h1, div, img, p {
 }
 
 /* CSS Styles for Body and Images */
-
 body {
-    background-color: white;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333333;
+    line-height: 1.6;
 }
 
 img {
@@ -29,25 +30,57 @@ img {
     display: block;
 }
 
-/* CSS Styles for Header */
-
-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    align-self: center;
+#container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
 }
 
-header img {
-    margin: 0 auto;
+/* CSS Styles for Header */
+header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#logo {
+    max-width: 220px;
+    width: 100%;
+    height: auto;
+    padding: 0.5em;
+}
+
+/* Hamburger Menu Button (Mobile/Tablet) */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #D38A8E;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* CSS Styles for Navigation Area */
-
 nav {
-    padding: 1%;
-    margin-bottom: 1%;
+    background-color: #ffffff;
 }
 
 nav ul {
@@ -58,170 +91,338 @@ nav ul {
 
 nav li {
     display: block;
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-family: 'Times New Roman', Arial, sans-serif;
     font-weight: bold;
     border-top: 1px solid #D38A8E;
-    border-radius: 1em;
-    
 }
 
 nav li a {
     display: block;
     color: #D38A8E;
     text-align: center;
-    padding: 0.5em 2.5em;
+    padding: 0.8em 1em;
     text-decoration: none;
-    margin: 0.1em;
 }
 
 nav li:first-child {
     border-top: none;
 }
 
-nav a:hover {
+nav a:hover, nav a.active-nav {
     color: white;
     background: linear-gradient(to right, #f37b9b, #ffb5c9);
-    border-radius: 1em;
-    transition: color 0.7s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
-nav a:active {
-    color: #ffffff;
-    background-color: #f09fa3;
-}
-
-/* Show Mobile Class, Hide Tablet-Desktop Class */
-
-.mobile {
-    display: block;
-}
-
-.tablet-desktop {
+/* Mobile Nav Drawer state handled by JS */
+.nav-menu {
     display: none;
 }
 
-/* CSS Styles for the Main Section */
-
-main {
-    clear: both;
-    background-color: white;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    padding: 2% 2.5%;
-    font-size: 1.25em;
-    color: #333333;
-}
-
-h3 {
-    font-family: "Patua One", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #333333;
-}
-
-hr {
-    margin-top: 1.7em;
-    margin-bottom: 1.7em;
-}
-
-#contact {
-    text-align: center;
-}
-
-#contact a {
-    color: #8d1e49;
-    text-decoration: none;
-}
-
-
-
-#madonnares {
-    clear: both;
-    width: 100%;
-    height: 20em;
-    object-fit: cover;
+.nav-menu.active {
     display: block;
 }
 
-#logo {
-    max-width: 270px;
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-    clear: bottom;
-}
-
-#about p {
-    padding-bottom: 1em;
-}
-
-
-.map {
-    border: 8px solid #ffc1d4;
-    border-radius: 1em;
-    margin-bottom: 2em;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.15);
-    width: 95%;
-    height: 50%;
-}
-
+/* Banner with Search Bar Overlay */
 .banner-wrapper {
-    clear: both;
+    position: relative;
     width: 100%;
-    height: 300px; 
+    height: 320px;
     overflow: hidden;
-    
 }
 
 .banner-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(243, 123, 155, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.banner-overlay h1 {
+    font-family: "Patua One", serif;
+    color: #ffffff;
+    font-size: 2.2em;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 0.3em;
+}
+
+.banner-overlay p {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 1.2em;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Practical Simple Search Bar */
+.search-form {
+    display: flex;
+    background: #ffffff;
+    border-radius: 2em;
+    padding: 0.3em 0.8em;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.search-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    font-size: 1em;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+    background: transparent;
+}
+
+.search-form button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 0 0.5em;
+    color: #f37b9b;
+}
+
+/* CSS Styles for the Main Section */
+main {
+    padding: 3% 5%;
+    background-color: #ffffff;
+}
+
+h3 {
+    font-family: "Patua One", serif;
+    font-weight: 400;
+    color: #333333;
+    margin-bottom: 0.8em;
+}
+
+/* Featured Homes & Available Units Cards */
+.featured-section, .units-section {
+    background: linear-gradient(135deg, #ffffff 0%, #fff0f3 100%);
+    border: 2px solid #ffb5c9;
+    border-radius: 1.5em;
+    padding: 2em;
+    margin-top: 2em;
+    box-shadow: 0 4px 15px rgba(255, 181, 201, 0.2);
+}
+
+.section-title {
+    text-align: center;
+    color: #8d1e49;
+    font-family: "Patua One", serif;
+    margin-bottom: 1.5em;
+    letter-spacing: 1px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #ffd6e0;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.2em;
+}
+
+.card-content h4 {
+    font-family: "Patua One", serif;
+    color: #8d1e49;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.card-content p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 0.5em;
+}
+
+/* Action Buttons */
+.cta-button-wrapper {
+    text-align: center;
+    margin: 2em 0 1em 0;
+}
+
+.btn-pink {
+    background: linear-gradient(to right, #f37b9b, #ffb5c9);
+    color: white;
+    padding: 0.8em 2em;
+    border-radius: 2em;
+    text-decoration: none;
+    font-family: "Paytone One", sans-serif;
+    font-size: 1.1em;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(243, 123, 155, 0.3);
+    transition: opacity 0.2s;
+}
+
+.btn-pink:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* About Section */
+#about-box {
+    background: linear-gradient(to right, white, #fff0f3);
+    padding: 2.5em;
+    border-radius: 2em;
+    border: 1px solid #ffb5c9;
+    margin-bottom: 2em;
+}
+
+.about-broker-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+.broker-img {
+    width: 250px;
+    border-radius: 1em;
+    border: 5px solid #ffb5c9;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Contact & Forms */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+
+.form-box, .schedule-box {
+    background: #fff;
+    border: 2px solid #ffb5c9;
+    border-radius: 1.5em;
+    padding: 2em;
+    box-shadow: 0 4px 15px rgba(255,181,201,0.15);
+}
+
+.form-group {
+    margin-bottom: 1.2em;
+}
+
+.form-group label {
     display: block;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+    color: #555;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ffb5c9;
+    border-radius: 0.8em;
+    font-size: 1em;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #f37b9b;
+    box-shadow: 0 0 5px rgba(243,123,155,0.3);
+}
+
+table.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    text-align: left;
+}
+
+table.schedule-table th, table.schedule-table td {
+    padding: 0.8em;
+    border-bottom: 1px solid #ffd6e0;
+    font-size: 0.95em;
+}
+
+table.schedule-table th {
+    background-color: #fff0f3;
+    color: #8d1e49;
+    font-family: "Patua One", serif;
+}
+
+.map-container {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.map {
+    border: 6px solid #ffc1d4;
+    border-radius: 1em;
+    width: 100%;
+    height: 400px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 .tel-link {
     background: linear-gradient(to right, white, #ffb5c9);
-    border-bottom: 1px solid #ffb5c9;
-    padding: 2%;
-    margin: 0 auto;
-    width: 80%;
+    padding: 1em;
+    margin: 1em auto;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
     border-radius: 2em;
-    margin-top: 1em ;
-    margin-bottom: 1em ;
-    box-shadow: inset 0 0 8px rgba(255, 147, 199, 0.2), 0 4px 10px rgba(255, 179, 225, 0.15);
+    box-shadow: 0 4px 10px rgba(255, 179, 225, 0.15);
 }
 
 .tel-link a {
-    color: white;
+    color: #8d1e49;
     text-decoration: none;
-    font-size: 1.5em;
-    display: block;
+    font-size: 1.3em;
     font-family: "Paytone One", sans-serif;
-    font-weight: 100;
-    font-style: normal;
 }
 
-.hours {
-    margin-left: 2%;
-}
-
-/* CSS Styles for the Footer */
-
+/* Footer */
 footer {
     width: 100%;
     background: linear-gradient(to right, #f37b9b, #ffb5c9);
     padding: 1.5em;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
 }
 
 footer p {
     font-size: 0.85em;
-    text-align: center;
     color: white;
-    padding: 0.1em;
-    
+    padding: 0.2em;
 }
 
 footer p a {
@@ -229,45 +430,29 @@ footer p a {
     text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
-
 /* ============================================== */
-/* MEDIA QUERY FOR TABLET VIEWPORT */
-/* Tablet Viewport: Show Tablet-Desktop Class, Hide Mobile Class */
-
-@media screen and (min-width: 630px), print {
-    .tablet-desktop {
-        display: block;
-    }
-
-    .mobile {
+/* MEDIA QUERY FOR TABLET & DESKTOP VIEWPORTS */
+@media screen and (min-width: 768px) {
+    .hamburger {
         display: none;
     }
 
-/* Tablet Viewport: Style Rule for Header */
-
-    header {
-        position: static;
-        padding-bottom: 2em;
+    .nav-menu {
+        display: block !important;
     }
 
-/* Tablet Viewport: Style Rules for Nav Area */
+    header {
+        padding: 1em 5%;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 1em;
+    }
 
     nav li {
         border-top: none;
-        display: inline-block;
-        font-size: 1.3em;
-        font-family: 'Times New Roman', Arial, sans-serif;
-        font-weight: bold;
-        border-right: 2.067px solid #D38A8E;
-        border-radius: 0;
+        border-right: 2px solid #D38A8E;
     }
 
     nav li:last-child {
@@ -275,139 +460,30 @@ footer p a {
     }
 
     nav li a {
-        padding: 0.4em 0.6em;
+        padding: 0.4em 0.8em;
     }
 
-/* Tablet Viewport: Style Rules For Main Content Area */
-
-    #about {
-        clear: left;
-        background: linear-gradient(to right, white, #ffb5c9);
-        background-color: white;
-        padding: 1em 1.5em 2.5em 1.5em ;
-        border-radius: 5em;
-        border-bottom: 1px solid #ffb5c9;
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .tel-num {
-        font-size: 1em;
+    .units-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .map {
-        width: 700px;
-        height: 600px;
+    .about-broker-flex {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-
-
-
-
-
-
-
-
-/* ========================================= */
-/* MEDIA QUERY FOR DESKTOP VIEWPORT */
-
-
-@media screen and (min-width: 1015px), print {
-
-/* Desktop Viewport: Style Rule For Header */
-
-    header {
-        width: 20%;
-        float: left;
-        padding-bottom: 0;
-    }
-
-    header img {
-        margin: 0;
-    }
-
-/* Desktop Viewport: Style Rules For Nav Area */
-
-    nav {
-        float: right;
-        width: 70%;
-        margin: 6em 1em 0em 0em;
-        padding-bottom: 0;
-    }
-
-
-    nav ul {
-        text-align: right;
-    }
-
-    nav li {
-        border: none;
-    }
-
-    nav li a {
-        padding: 0.5em 0.6em;
-    }
-
-   nav a:hover {
-        color: white;
-        background-color: #f09fa3;
-        border-radius: 2em;
-    }
-
-    nav a:active {
-        color: #ffffff;
-        background-color: #f09fa3;
-    }
-
-/* Desktop Viewport: Style Rules For Main Content */
-
-    main {
-        clear: left;
-    }
-
-    main h1 {
-        font-size: 1.8em;
-    }
-
-    #about {
-        clear: left;
-        background: linear-gradient(to right, white, #ffb5c9);
-        background-color: white;
-        padding: 3em 5em ;
-        border-radius: 20em;
-        clear: left;
-    }
-}
-
-
-
-
-
-
-
-
-
-/* =======================================    */
-/* Media Query For Large Desktop Viewport */
-
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1024px) {
     #container {
-        width: 1920px;
-        margin: 0 auto;
+        max-width: 1280px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
     }
 }
-
-/* =================================*/
-/* Media Query Print */
-
-@media print {
-    body {
-        background-color: white;
-        color: black;
-    }
-}
-
-
-
-
-
-

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
 	<!--
 	Full Name: Alonzo Miguel R. Garcia
@@ -7,59 +7,139 @@
 	Business: NiCeity Realty
 	-->
 	<title>NiCeity Realty: Contact Us</title>
-	<meta charset = "utf-8">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Paytone+One&display=swap" rel="stylesheet">
-	<link rel = "stylesheet" href = "styles.css" type = "text/css" />
+	<link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 
 <body>
-	<div id = "container">
+	<div id="container">
 		<header>
-			<a href = "index.html">
-				<img src = "img/NiceityLogo.png" alt = "NiCeity Logo" id = "logo"/>
+			<a href="index.html">
+				<img src="img/NiceityLogo.png" alt="NiCeity Logo" id="logo"/>
 			</a>
+			<button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+			<nav>
+				<ul class="nav-menu" id="navMenu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About Us</a></li>
+					<li><a href="houses.html">Houses</a></li>
+					<li><a href="contact.html" class="active-nav">Contact Us</a></li>
+				</ul>
+			</nav>
 		</header>
 
-		<nav>
-			<ul>
-				<li><a href = "index.html">Home</a></li>
-				<li><a href = "about.html">About Us</a></li>
-				<li><a href = "houses.html">Houses</a></li>
-				<li><a href = "apartments.html">Apartments</a></li>
-				<li><a href = "contact.html">Contact Us</a></li>
-			</ul>
-		</nav>
-
-		<div class = "banner-wrapper"  id = "madonnares">
-			<img src = "img/madonnaban.jpg" alt = "Madonna Residences"/>
+		<div class="banner-wrapper">
+			<img src="img/madonnaban.jpg" alt="Madonna Residences"/>
+			<div class="banner-overlay">
+				<h1>A Step Closer to Home</h1>
+				<p>Start your journey to home with us!</p>
+				<form class="search-form" action="houses.html" method="GET">
+					<input type="text" name="search" placeholder="Search houses, bedrooms, location..." />
+					<button type="submit" aria-label="Search">&#128269;</button>
+				</form>
+			</div>
 		</div>
 
 		<main>
-			<div id = "contact">
-				<h3>Excited to find your new home? Get in touch here!</h3>
-                <h4 class = "tel-link"><a href="tel:09617454037" target="_blank">(+63) 961 745 4037</a></h4>
+			<h3 class="section-title">GET IN TOUCH &amp; BOOK AN APPOINTMENT</h3>
 
-				<br/>
+			<div class="contact-grid">
 				
-				<h3>Email us here! &#128231; </h3>
-                <h4><a href="mailto:niceityrealty@gmail.com" target="_blank">niceityrealty@gmail.com</a></h4>
+				<!-- Appointment Booking Form -->
+				<div class="form-box">
+					<h3>Book a Viewing</h3>
+					<form action="#" method="POST">
+						<div class="form-group">
+							<label for="fname">Full Name</label>
+							<input type="text" id="fname" name="fname" placeholder="e.g. Juan Dela Cruz" required />
+						</div>
+						<div class="form-group">
+							<label for="unit">Unit for Viewing</label>
+							<input type="text" id="unit" name="unit" placeholder="e.g. Unit 1 / Modern House" required />
+						</div>
+						<div class="form-group">
+							<label for="datetime">Preferred Time and Date</label>
+							<input type="datetime-local" id="datetime" name="datetime" required />
+						</div>
+						<div class="form-group">
+							<label for="email">Email for Confirmation</label>
+							<input type="email" id="email" name="email" placeholder="niceity@gmail.com" required />
+						</div>
+						<div class="cta-button-wrapper">
+							<button type="submit" class="btn-pink" style="border:none; cursor:pointer; width:100%;">SUBMIT APPOINTMENT</button>
+						</div>
+					</form>
+				</div>
 
+				<!-- Schedule & Contact Info Box -->
+				<div class="schedule-box">
+					<h3>Office Schedule</h3>
+					<table class="schedule-table">
+						<thead>
+							<tr>
+								<th>Day</th>
+								<th>Office Hours</th>
+								<th>Viewing Schedule</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Mon – Thu</td>
+								<td>8:30 AM – 5:30 PM</td>
+								<td>9:00 AM – 4:00 PM</td>
+							</tr>
+							<tr>
+								<td>Friday</td>
+								<td>8:30 AM – 5:00 PM</td>
+								<td>9:00 AM – 3:00 PM</td>
+							</tr>
+							<tr>
+								<td>Saturday</td>
+								<td>9:00 AM – 3:00 PM</td>
+								<td>9:00 AM – 1:00 PM</td>
+							</tr>
+							<tr>
+								<td>Sunday</td>
+								<td>Closed (Online)</td>
+								<td>By Appointment</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					<div style="margin-top: 2em; text-align: center;">
+						<h4>Direct Contact</h4>
+						<p class="tel-link"><a href="tel:09617454037">(+63) 961 745 4037</a></p>
+						<p>&#128231; <a href="mailto:niceityrealty@gmail.com" style="color: #8d1e49;">niceityrealty@gmail.com</a></p>
+					</div>
+				</div>
 
-                <br/>
+			</div>
 
-                <legend class = "centering"><h4>Find Us Here! Near Your Future Home : Dela Paz Sur, San Fernando, 2000 Pampanga &#128205;</h4></legend>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3852.47101582228!2d120.63269507493385!3d15.077347385467512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f10051fdda1f%3A0xcc2788bf31cf8d97!2sMadonna%20Residences!5e0!3m2!1sen!2sph!4v1784301729098!5m2!1sen!2sph" width="600" height="450" allowfullscreen="" class = "map"></iframe>
+			<div class="map-container">
+				<legend><h4>Find Us Here: Dela Paz Sur, San Fernando, 2000 Pampanga &#128205;</h4></legend>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3852.47101582228!2d120.63269507493385!3d15.077347385467512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f10051fdda1f%3A0xcc2788bf31cf8d97!2sMadonna%20Residences!5e0!3m2!1sen!2sph!4v1784301729098!5m2!1sen!2sph" allowfullscreen="" class="map"></iframe>
 			</div>
 		</main>
 		
 		<footer>
 			<p>&copy; Copyright 2026 &#8226 All Rights Reserved &#8226 Developed by Alonzo Garcia</p>
 			<p><strong>NiCeity Realty</strong></p>
-			<p><a href = "mailto:niceityrealty@gmail.com"  target="_blank"> &#128231; niceityrealty@gmail.com</a></p>
-			
+			<p><a href="mailto:niceityrealty@gmail.com" target="_blank">&#128231; niceityrealty@gmail.com</a></p>
 		</footer>
 	</div>
-</body>
 
+	<script>
+		const hamburgerBtn = document.getElementById('hamburgerBtn');
+		const navMenu = document.getElementById('navMenu');
+		hamburgerBtn.addEventListener('click', () => {
+			navMenu.classList.toggle('active');
+		});
+	</script>
+</body>
 </html>
